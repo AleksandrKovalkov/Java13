@@ -10,8 +10,8 @@ public class ProductManager {
         this.repository = repository;
     }
 
-    public void add(Product item) {
-        repository.save(item);
+    public void add(Product product) {
+        repository.add(product);
     }
 
     public Product[] searchBy(String text) {
@@ -19,11 +19,14 @@ public class ProductManager {
         for (Product product : repository.findAll()) {
             if (matches(product, text)) {
                 Product[] tmp = new Product[result.length + 1];
-                System.arraycopy(result, 0, tmp, 0, result.length);
+                for (int i = 0; i < result.length; i++) {
+                    tmp[i] = result[i];
+                }
                 tmp[tmp.length - 1] = product;
                 result = tmp;
             }
         }
+
         return result;
     }
 

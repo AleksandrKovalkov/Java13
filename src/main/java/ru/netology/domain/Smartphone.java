@@ -7,7 +7,7 @@ import lombok.EqualsAndHashCode;
 @Data
 
 public class Smartphone extends Product {
-    private String manufacturer;
+    protected String manufacturer;
 
     public Smartphone() {
     }

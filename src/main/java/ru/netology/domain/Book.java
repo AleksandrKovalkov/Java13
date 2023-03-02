@@ -7,7 +7,7 @@ import lombok.EqualsAndHashCode;
 @Data
 
 public class Book extends Product {
-    private String author;
+    protected String author;
 
     public Book() {
     }
